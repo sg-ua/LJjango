@@ -11,7 +11,7 @@ def index(request):
     return HttpResponse("图书管理系统")
 
 def detail(request, id):
-    #book = Book.objects.get(id=id)
+    book = Book.objects.get(id=id)
     #info = """
     #书籍id： %s
     #书籍名称： %s
