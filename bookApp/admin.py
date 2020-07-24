@@ -13,15 +13,15 @@ class BookAdmin(admin.ModelAdmin):
     list_per_page = 3
     inlines = [HeroInLine]
 
-class BookAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'sex', 'content']
+class HeroAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'sex', 'content', 'book']
     list_filter = ['book']
     search_fields = ['name']
     list_per_page = 3
 
     #后台管理添加需要设置的信息
     #fields = ['book', 'name', 'content', 'gender']
-    fieldsets = [('基础信息', {'fields': ['book', 'name']})
+    fieldsets = [('基础信息', {'fields': ['book', 'name']}),
                  ('详细信息', {'fields': ['content', 'gender']}), ]
 
 #后台管理的配置文件
