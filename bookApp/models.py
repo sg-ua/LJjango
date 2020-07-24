@@ -6,8 +6,13 @@ class Book(models.Model):
     pub_date = models.DateField()
     def __repr__(self):
         return  '<Book: %s>' %(self.title)
+    #字符串友好展示，在交互式环境测试时生效
+    def __str__(self):
+        return self.title
     class Meta:
         db_table = 'books'
+        verbose_name = '图书管理'
+        verbose_name_plural = '图书管理'
 
 class Hero(models.Model):
     name = models.CharField(max_length=20, primary_key=True)
@@ -18,3 +23,5 @@ class Hero(models.Model):
         return  '<Hero: %s>' %(self.name)
     class Meta:
         db_table = 'heros'
+        verbose_name = '人物管理'
+        verbose_name_plural = '人物管理'
