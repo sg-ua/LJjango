@@ -21,6 +21,13 @@ class Hero(models.Model):
     book = models.ForeignKey('Book', on_delete=models.CASCADE)
     def __repr__(self):
         return  '<Hero: %s>' %(self.name)
+
+    def sex(self):
+        if self.gender:
+            return "男"
+        else:
+            return "女"
+
     class Meta:
         db_table = 'heros'
         verbose_name = '人物管理'
